@@ -28,22 +28,6 @@ var winCreator = $(".js-event__creator");
 var inputDate = $(this).data();
 today = year + "-" + month + "-" + day;
 
-
-// ------ set default events -------
-function defaultEvents(dataDay,dataName,dataNotes,classTag){
-  var date = $('*[data-day='+dataDay+']');
-  date.attr("data-name", dataName);
-  date.attr("data-notes", dataNotes);
-  date.addClass("event");
-  date.addClass("event--" + classTag);
-}
-
-defaultEvents(today, 'YEAH!','Today is your day','important');
-defaultEvents('2017-12-25', 'MERRY CHRISTMAS','A lot of gift!!!!','festivity');
-defaultEvents('2017-05-04', "LUCA'S BIRTHDAY",'Another gifts...?','birthday');
-defaultEvents('2017-03-03', "MY LADY'S BIRTHDAY",'A lot of money to spent!!!!','birthday');
-
-
 // ------ functions control -------
 
 //button of the current day
@@ -69,6 +53,7 @@ dataCel.each(function() {
 addBtn.on("click", function() {
   winCreator.addClass("isVisible");
   $("body").addClass("overlay");
+  //喂 z tego zrobic funkcje zaznaczania
   dataCel.each(function() {
     if ($(this).hasClass("isSelected")) {
       today = $(this).data("day");
