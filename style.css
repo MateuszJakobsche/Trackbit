@@ -47,7 +47,7 @@
 /* RESPONSIVE ================================================*/
 /* ===========================================================*/
 body {
-  position: realative;
+  position: relative;
   height: 100%;
 }
 body.overlay:before {
@@ -68,6 +68,16 @@ html {
   font-size: 13px;
   font-family: 'Lato', sans-serif;
   font-weight: 400;
+}
+ul{
+  list-style-type: none;
+  padding-left: 0px;
+}
+li{
+  font-size: 28px;
+  font-family: 'Lato', sans-serif;
+  margin: 20px;
+  margin-left: 10px;
 }
 .wrapper {
   position: relative;
@@ -258,6 +268,10 @@ header > .wrapper a {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
+.o-btn-upgr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 .o-btn.long {
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
@@ -445,12 +459,20 @@ header > .wrapper a {
   padding: 20px;
 }
 .c-sidebar{
+  padding: 20px;
   width: 300px;
   margin-left: 0px;
   margin-top: 0px;
+  margin-bottom: 0px;
   border-radius: 0px;
   -webkit-border-radius: 0px;
 }
+.c-sidebar__habitList {
+font-size: 28px;
+font-family: 'Lato', sans-serif;
+margin: 30px;
+}
+
 .c-aside__day {
   font-size: 28px;
   margin: 50px 0;
