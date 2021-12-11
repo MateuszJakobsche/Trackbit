@@ -370,6 +370,8 @@ header > .wrapper a {
   position: relative;
   width: calc(100% / 7);
   text-align: center;
+  
+
   cursor: pointer;
   border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -381,10 +383,13 @@ header > .wrapper a {
   margin: 0;
   top: 50%;
   left: 50%;
-  width: 85px;
-  height: 85px;
+  width: 50%;
+  height: 50%;
+  
   line-height: 80px;
   font-size: 20px;
+  
+  
   background:#A7D3E8;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%); /* wycentrowanie daty w kółku */
@@ -392,6 +397,7 @@ header > .wrapper a {
   -webkit-border-radius: 50%;
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  
 } 
 .c-cal__cel::before {
   content: "";
@@ -400,7 +406,7 @@ header > .wrapper a {
 }
 
 /* zaznaczanie w kalendarzu */
-.c-cal__cel:nth-child(1) p {
+.c-cal__cel:nth-child(6) p {
   background:#E8CBA7 ;
 }
 .c-cal__cel:nth-child(7) p {
