@@ -122,9 +122,9 @@ function fill_table(month, month_length, indexMonth) {
 </header>
 <div class="wrapper">
   <div class="c-calendar">
-    <div class="c-calendar__style c-sidebar">
+    <div class="c-calendar__style c-aside">
       <a class="c-add o-btn o-btn-upgr js-event__add" href="javascript:;">add new habit <span class="fa fa-plus"></span></a>
-      <div class="c-sidebar__habitList">
+      <div class="habitList">
         <ul>
           <li>Sleep</li>
           <li>Exercise</li>
@@ -154,14 +154,15 @@ function fill_table(month, month_length, indexMonth) {
       fill_table("December", 31, "12");
       </script>
     </div>
-    <div class="c-calendar__style c-aside">
+    <!-- 喂 ponizsza czesc ma sie pokazac przy kliknieciu zeby stworzyc notatke -->
+    <!-- <div class="c-calendar__style c-aside">
       <a class="c-add o-btn js-event__add" href="javascript:;">add event <span class="fa fa-plus"></span></a>
       <div class="c-aside__day">
         <span class="c-aside__num"></span> <span class="c-aside__month"></span>
       </div>
       <div class="c-aside__eventList">
       </div>
-    </div>
+    </div> -->
   </div>
 
   <div class="c-event__creator c-calendar__style js-event__creator">
