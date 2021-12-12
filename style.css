@@ -259,6 +259,7 @@ header > .wrapper a {
 .o-btn {
   display: inline-block;
   padding: 0 10px;
+  margin-left: 50px;
   line-height: 30px;
   height: 30px;
   background-color: #A7D3E8 ;
@@ -289,7 +290,6 @@ header > .wrapper a {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  max-width: 1100px;
 }
 .c-calendar__style {
   background-color: #51839C;
@@ -383,11 +383,11 @@ header > .wrapper a {
   margin: 0;
   top: 50%;
   left: 50%;
-  width: 30%;
-  height: 30%;
+  width: 5vmin;
+  height: 5vmin;
   
-  line-height: 450%;
-  font-size: 20px;
+  line-height: 15vmin;
+  font-size: 3vmin;
   
   
   background:#A7D3E8;
