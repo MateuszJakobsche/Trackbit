@@ -131,7 +131,7 @@ header {            /*napisy w headerze*/
 }
 header > .wrapper {         
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding: 0 20px;
   box-sizing: border-box;
@@ -289,6 +289,7 @@ header > .wrapper a {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  max-width: 1100px;
 }
 .c-calendar__style {
   background-color: #51839C;
@@ -370,8 +371,7 @@ header > .wrapper a {
   position: relative;
   width: calc(100% / 7);
   text-align: center;
-  
-
+  line-height: 84px;
   cursor: pointer;
   border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -383,10 +383,10 @@ header > .wrapper a {
   margin: 0;
   top: 50%;
   left: 50%;
-  width: 50%;
-  height: 50%;
+  width: 30%;
+  height: 30%;
   
-  line-height: 80px;
+  line-height: 450%;
   font-size: 20px;
   
   

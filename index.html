@@ -95,7 +95,10 @@ function fill_table(month, month_length, indexMonth) {
 <header>
   <div class="wrapper">
     <div class="c-monthyear">
-    <div class="c-month">
+      <div class="c-sort">
+      </div>
+      <span class="c-paginator__year"><script>document.write(new Date().getFullYear())</script></span>
+      <div class="c-month">
         <span id="prev" class="prev fa fa-angle-left" aria-hidden="true"></span>
         <div id="c-paginator">
           <span class="c-paginator__month">JANUARY</span>
@@ -113,7 +116,6 @@ function fill_table(month, month_length, indexMonth) {
         </div>
         <span id="next" class="next fa fa-angle-right" aria-hidden="true"></span>
       </div>
-      <span class="c-paginator__year"><script>document.write(new Date().getFullYear())</script></span>
     </div>
     <div class="c-sort">
       <a class="o-btn c-today__btn" href="javascript:;">TODAY</a>
