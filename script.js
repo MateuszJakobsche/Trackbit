@@ -20,7 +20,6 @@ var monthText = [
   "December"
 ];
 var indexMonth = month;
-var indexYear = new Date().getFullYear();
 var todayBtn = $(".c-today__btn");
 var addBtn = $(".js-event__add");
 var saveBtn = $(".js-event__save");
@@ -54,7 +53,6 @@ dataCel.each(function() {
 addBtn.on("click", function() {
   winCreator.addClass("isVisible");
   $("body").addClass("overlay");
-  //喂 z tego zrobic funkcje zaznaczania
   dataCel.each(function() {
     if ($(this).hasClass("isSelected")) {
       today = $(this).data("day");
@@ -146,24 +144,36 @@ function fillEventSidebar(self) {
       break;
    }
 };
+
 dataCel.on("click", function() {
   var thisEl = $(this);
-  var thisDay = $(this)
-  .attr("data-day")
-  .slice(8);
-  var thisMonth = $(this)
-  .attr("data-day")
-  .slice(5, 7);
 
-  fillEventSidebar($(this));
-
-  $(".c-aside__num").text(thisDay);
-  $(".c-aside__month").text(monthText[thisMonth - 1]);
-
-  dataCel.removeClass("isSelected");
-  thisEl.addClass("isSelected");
-
+  if (thisEl.hasClass("isSelected")) {
+    thisEl.removeClass("isSelected");
+  }
+  else {
+    thisEl.addClass("isSelected");
+  }
 });
+
+// 喂 do notatek
+// dataCel.on("dblclick", function() {
+//   var thisEl = $(this);
+//   var thisDay = $(this)
+//   .attr("data-day")
+//   .slice(8);
+//   var thisMonth = $(this)
+//   .attr("data-day")
+//   .slice(5, 7);
+
+//   fillEventSidebar($(this));
+
+//   $(".c-aside__num").text(thisDay);
+//   $(".c-aside__month").text(monthText[thisMonth - 1]);
+
+//   dataCel.removeClass("isSelected");
+//   thisEl.addClass("isSelected");
+// });
 
 //function for move the months
 function moveNext(fakeClick, indexNext) {
