@@ -15,7 +15,7 @@ function day_title(day_name) {
     document.write("<div class='c-cal__col'>" + day_name + "</div>");
   }
   // fills the month table with numbers
-function fill_table(month, month_length, indexMonth) {
+function fill_table(month, month_length, indexMonth, indexYear) {
     day = 1;
     // begin the new month table
     document.write("<div class='c-main c-main-" + indexMonth + "'>");
@@ -44,7 +44,7 @@ function fill_table(month, month_length, indexMonth) {
     // fill the first week of days
     for (var i = start_day; i < 8; i++) {
       document.write(
-        "<div data-day='2021-" +
+        "<div data-day='" + indexYear + "-" +
           indexMonth +
           "-0" +
           day +
@@ -62,7 +62,7 @@ function fill_table(month, month_length, indexMonth) {
       for (var i = 1; i <= 7 && day <= month_length; i++) {
         if (day >= 1 && day <= 9) {
           document.write(
-            "<div data-day='2021-" +
+            "<div data-day='" + indexYear + "-" +
               indexMonth +
               "-0" +
               day +
@@ -73,7 +73,7 @@ function fill_table(month, month_length, indexMonth) {
           day++;
         } else {
           document.write(
-            "<div data-day='2021-" +
+            "<div data-day='" + indexYear + "-" +
               indexMonth +
               "-" +
               day +

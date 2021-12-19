@@ -20,6 +20,7 @@ var monthText = [
   "December"
 ];
 var indexMonth = month;
+var indexYear = new Date().getFullYear();
 var todayBtn = $(".c-today__btn");
 var addBtn = $(".js-event__add");
 var saveBtn = $(".js-event__save");
