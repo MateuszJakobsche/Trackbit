@@ -26,14 +26,28 @@ var saveBtn = $(".js-event__save");
 var closeBtn = $(".js-event__close");
 var winCreator = $(".js-event__creator");
 var inputDate = $(this).data();
-today = year + "-" + month + "-" + day;
 
+function formatDate() {
+  var formatDateObj = new Date(),
+  formatMonth = '' + (formatDateObj.getMonth() + 1),
+  formatDay = '' + formatDateObj.getDate(),
+  formatYear = formatDateObj.getFullYear();
+
+  if (formatMonth.length < 2) 
+  formatMonth = '0' + formatMonth;
+  if (formatDay.length < 2) 
+  formatDay = '0' + formatDay;
+
+  return [formatYear, formatMonth, formatDay].join('-');
+}
+
+today = formatDate();
 // ------ functions control -------
 
 //button of the current day
 todayBtn.on("click", function() {
   if (month < indexMonth) {
-    var step = indexMonth % month;
+    var step = indexMonth - month;
     movePrev(step, true);
   } else if (month > indexMonth) {
     var step = month - indexMonth;
