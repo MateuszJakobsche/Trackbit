@@ -41,14 +41,13 @@ function fill_table(month, month_length, indexMonth) {
       }
     }
 
+    var celId;
     // fill the first week of days
     for (var i = start_day; i < 8; i++) {
+      celId = new Date().getFullYear() + "-" + indexMonth + "-0" + day;
       document.write(
-        "<div data-day='" + new Date().getFullYear() + "-" +
-          indexMonth +
-          "-0" +
-          day +
-          "'class='c-cal__cel' id='" + new Date().getFullYear() + "-" + indexMonth + "-0" + day + "'><p>" +
+        "<div data-day='" + celId +
+          "'class='c-cal__cel' id='" + celId + "'><p>" +
           day +
           "</p></div>"
       );
@@ -61,23 +60,19 @@ function fill_table(month, month_length, indexMonth) {
       document.write("<div class='c-cal__row'>");
       for (var i = 1; i <= 7 && day <= month_length; i++) {
         if (day >= 1 && day <= 9) {
+          celId = new Date().getFullYear() + "-" + indexMonth + "-0" + day;
           document.write(
-            "<div data-day='" + new Date().getFullYear() + "-" +
-              indexMonth +
-              "-0" +
-              day +
-              "'class='c-cal__cel' id='" + new Date().getFullYear() + "-" + indexMonth + "-0" + day + "'><p>" +
+            "<div data-day='" + celId +
+              "'class='c-cal__cel' id='" + celId + "'><p>" +
               day +
               "</p></div>"
           );
           day++;
         } else {
+          celId = new Date().getFullYear() + "-" + indexMonth + "-" + day;
           document.write(
-            "<div data-day='" + new Date().getFullYear() + "-" +
-              indexMonth +
-              "-" +
-              day +
-              "'class='c-cal__cel' id='" + new Date().getFullYear() + "-" + indexMonth + "-" + day + "'><p>" +
+            "<div data-day='" + celId +
+              "'class='c-cal__cel' id='" + celId + "'><p>" +
               day +
               "</p></div>"
           );
