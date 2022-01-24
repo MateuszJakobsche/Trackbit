@@ -10,7 +10,7 @@ class habitList {
     
   }
   static getInstance(){
-    if (!(habitList.instance)){
+    if (!(habitList.instance)|| (habitList.instance != localStorage.getItem("habitlist").split('\n'))){
       return new habitList();
     }
     return habitList.instance;
