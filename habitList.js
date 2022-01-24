@@ -7,8 +7,14 @@ class habitList {
 
     habitList.instance = this;
     this.ListOfHabits = localStorage.getItem("habitlist").split('\n');
-  }
     
   }
-  
-    module.exports = habitList;
+  static getInstance(){
+    if (!(habitList.instance)){
+      return new habitList();
+    }
+    return habitList.instance;
+  }
+}
+
+  module.exports = habitList;
