@@ -9,6 +9,14 @@ test('habitList is created', () => {
 
 });
 
+test('should get from localStorage', () => {
+    const KEY = 'habitlist', VALUE = 'Sleep\nExercise\nDiet\nCats'
+
+    habitList.getInstance()
+    expect(localStorage.getItem).toHaveBeenLastCalledWith(KEY);
+    expect(localStorage.__STORE__[KEY]).toBe(VALUE);
+    expect(Object.keys(localStorage.__STORE__).length).toBe(1);
+  });
 
 
 test('Does getInstance call constructor', () => {
@@ -19,6 +27,7 @@ test('Does getInstance call constructor', () => {
     expect(testHabitList1).toStrictEqual(testHabitList2);
     expect(testHabitList1).toBeInstanceOf(habitList);
 })
+
 
 test('Are habitList the same', () => {
     let testHabitList1 = habitList.getInstance();
