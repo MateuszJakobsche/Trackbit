@@ -439,9 +439,6 @@ header > .wrapper a {
 .c-cal__cel:nth-child(7) p {
   background: #E8CBA7;
 }
-.c-cal__cel:hover {
-  background-color:  #51839C  !important;
-}
 .c-cal__cel:hover p {
   background: #E8CBA7  !important;
 }
