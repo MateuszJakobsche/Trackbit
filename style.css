@@ -60,6 +60,17 @@ button {
   font-size: 28px;
   font-family: 'Lato', sans-serif;
 }
+.logo{
+  position: absolute;
+  right: 20px;
+  top: 4px;
+}
+.user{
+  position: absolute;
+  left: 20px;
+  top: 4px;
+  filter: invert(83%) sepia(16%) saturate(578%) hue-rotate(348deg) brightness(103%) contrast(82%);
+}
 body.overlay:before {
   position: fixed;
   content: '';
