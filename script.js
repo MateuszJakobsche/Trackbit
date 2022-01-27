@@ -161,12 +161,16 @@ function fillEventSidebar(self) {
 
 dataCel.on("click", function() {
   var thisEl = $(this);
-
+  var thisId = this.id;
+  //alert(thisId);
   if (thisEl.hasClass("isSelected")) {
     thisEl.removeClass("isSelected");
+    localStorage.removeItem(thisId);
+
   }
   else {
     thisEl.addClass("isSelected");
+    localStorage.setItem(thisId, "1");
   }
 });
 
