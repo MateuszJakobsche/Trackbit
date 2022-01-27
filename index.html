@@ -15,7 +15,7 @@ function day_title(day_name) {
     document.write("<div class='c-cal__col'>" + day_name + "</div>");
   }
   // fills the month table with numbers
-function fill_table(month, month_length, indexMonth) {
+  function fill_table(month, month_length, indexMonth, habit) {
     day = 1;
     // begin the new month table
     document.write("<div class='c-main c-main-" + indexMonth + "'>");
@@ -42,12 +42,22 @@ function fill_table(month, month_length, indexMonth) {
     }
 
     var celId;
+    var celCl;
+    var checkchek;
+    
     // fill the first week of days
     for (var i = start_day; i < 8; i++) {
       celId = new Date().getFullYear() + "-" + indexMonth + "-0" + day;
+      checkchek = localStorage.getItem(habit + " : " + celId);
+      if(checkchek == "1"){
+        celCl = "c-cal__cel isSelected";
+      }
+      else{
+        celCl = "c-cal__cel";
+      }
       document.write(
         "<div data-day='" + celId +
-          "'class='c-cal__cel' id='" + celId + "'><p>" +
+          "'class='"+ celCl +"' id='" + habit + " : " + celId + "'><p>" +
           day +
           "</p></div>"
       );
@@ -61,18 +71,32 @@ function fill_table(month, month_length, indexMonth) {
       for (var i = 1; i <= 7 && day <= month_length; i++) {
         if (day >= 1 && day <= 9) {
           celId = new Date().getFullYear() + "-" + indexMonth + "-0" + day;
+          checkchek = localStorage.getItem(habit + " : " + celId);
+          if(checkchek == "1"){
+            celCl = "c-cal__cel isSelected";
+          }
+          else{
+            celCl = "c-cal__cel";
+          }
           document.write(
             "<div data-day='" + celId +
-              "'class='c-cal__cel' id='" + celId + "'><p>" +
+              "'class='"+ celCl +"' id='" + habit + " : " +  celId + "'><p>" +
               day +
               "</p></div>"
           );
           day++;
         } else {
           celId = new Date().getFullYear() + "-" + indexMonth + "-" + day;
+            checkchek = localStorage.getItem(habit + " : " + celId);
+          if(checkchek == "1"){
+            celCl = "c-cal__cel isSelected";
+          }
+          else{
+          celCl = "c-cal__cel";
+          }
           document.write(
             "<div data-day='" + celId +
-              "'class='c-cal__cel' id='" + celId + "'><p>" +
+              "'class='"+ celCl +"' id='" + habit + " : " + celId + "'><p>" +
               day +
               "</p></div>"
           );
@@ -138,18 +162,18 @@ function fill_table(month, month_length, indexMonth) {
       // first day of the week of the new year
       today = new Date("January 1, " + year);
       start_day = today.getDay();
-      fill_table("January", 31, "01");
-      fill_table("February", 28, "02");
-      fill_table("March", 31, "03");
-      fill_table("April", 30, "04");
-      fill_table("May", 31, "05");
-      fill_table("June", 30, "06");
-      fill_table("July", 31, "07");
-      fill_table("August", 31, "08");
-      fill_table("September", 30, "09");
-      fill_table("October", 31, "10");
-      fill_table("November", 30, "11");
-      fill_table("December", 31, "12");
+      fill_table("January", 31, "01", selectedHabit);
+      fill_table("February", 28, "02", selectedHabit);
+      fill_table("March", 31, "03", selectedHabit);
+      fill_table("April", 30, "04", selectedHabit);
+      fill_table("May", 31, "05", selectedHabit);
+      fill_table("June", 30, "06", selectedHabit);
+      fill_table("July", 31, "07", selectedHabit);
+      fill_table("August", 31, "08", selectedHabit);
+      fill_table("September", 30, "09", selectedHabit);
+      fill_table("October", 31, "10", selectedHabit);
+      fill_table("November", 30, "11", selectedHabit);
+      fill_table("December", 31, "12", selectedHabit);
       </script>
     </div>
     <!-- 喂 ponizsza czesc ma sie pokazac przy kliknieciu zeby stworzyc notatke -->
