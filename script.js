@@ -158,6 +158,13 @@ function fillEventSidebar(self) {
       break;
    }
 };
+function modifyCountingArray(array){
+  let string = "";
+  for(let i = 0; i < 12; i++){
+    string= string + array[i].toString() + "\n";
+  }
+  localStorage.setItem("countingArray : "+selectedHabit, string);
+}
 
 dataCel.on("click", function() {
   var thisEl = $(this);
@@ -166,11 +173,15 @@ dataCel.on("click", function() {
   if (thisEl.hasClass("isSelected")) {
     thisEl.removeClass("isSelected");
     localStorage.removeItem(thisId);
-
+    selectedHabitArray.MonthCountOfDays[indexMonth-1] = selectedHabitArray.MonthCountOfDays[indexMonth-1] - 1;
+    modifyCountingArray(selectedHabitArray.MonthCountOfDays);
   }
   else {
     thisEl.addClass("isSelected");
     localStorage.setItem(thisId, "1");
+
+    selectedHabitArray.MonthCountOfDays[indexMonth-1] = selectedHabitArray.MonthCountOfDays[indexMonth-1] + 1;
+    modifyCountingArray(selectedHabitArray.MonthCountOfDays);
   }
 });
 

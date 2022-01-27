@@ -177,14 +177,34 @@ function day_title(day_name) {
       </script>
     </div>
     <!-- 喂 ponizsza czesc ma sie pokazac przy kliknieciu zeby stworzyc notatke -->
-    <!-- <div class="c-calendar__style c-aside">
+    <div class="c-calendar__style c-aside">
       <a class="c-add o-btn js-event__add" href="javascript:;">add event <span class="fa fa-plus"></span></a>
       <div class="c-aside__day">
         <span class="c-aside__num"></span> <span class="c-aside__month"></span>
       </div>
       <div class="c-aside__eventList">
+        <script>
+          class countingArray {
+            constructor(){
+              if (localStorage.getItem("countingArray : "+selectedHabit) === null) {
+                localStorage.setItem("countingArray : "+selectedHabit, "0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0");
+              }
+              countingArray.instance = this;
+              this.MonthCountOfDays = localStorage.getItem("countingArray : "+selectedHabit).split('\n').map(function(x){
+                return parseInt(x, 10);
+              });
+            }
+            static getInstance(){
+              if (!(countingArray.instance)|| (countingArray.instance != localStorage.getItem("countingArray : "+selectedHabit).split('\n'))){
+              return new countingArray();
+              }
+              return countingArray.instance;
+            }
+          }
+          let selectedHabitArray = countingArray.getInstance();
+        </script>
       </div>
-    </div> -->
+    </div>
   </div>
 
   <div class="c-event__creator c-calendar__style js-event__creator">
