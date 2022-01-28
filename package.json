@@ -1,13 +1,17 @@
 {
   "devDependencies": {
+    "cypress": "^9.3.1",
     "jest": "^27.4.7",
     "jest-localstorage-mock": "^2.4.18"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "cypress": "cypress open"
   },
   "jest": {
     "resetMocks": false,
-    "setupFiles": ["jest-localstorage-mock"]
+    "setupFiles": [
+      "jest-localstorage-mock"
+    ]
   }
 }
