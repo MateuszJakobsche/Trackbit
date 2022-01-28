@@ -31,4 +31,4 @@ if (localStorage.getItem("currenthabit") === null) {
      document.write("<li><button onClick='setHabit("+i+")'>" + thisHabit + "</button></li>");
      }
 
-  module.exports = habitList;
+  
