@@ -14,5 +14,15 @@ describe('selecting', () => {
   
         cy.should('have.class','c-cal__cel isSelected')
       });
+
+      it('check if today btn works', () => {
+
+        cy.get('#next').click().click()
   
-})
+        cy.get('.c-today__btn').click()
+  
+        let date = new Date();
+  
+        cy.get(`[data-month="${date.getMonth()+1}"]`).should('be.visible')
+      });
+    })
