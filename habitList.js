@@ -2,11 +2,19 @@ class habitList {
   constructor(){
 
     if (localStorage.getItem("habitlist") === null) {
-      localStorage.setItem("habitlist", "");
+      localStorage.setItem("habitlist", "My habit");
+    }
+
+    var habits = localStorage.getItem("habitlist");
+    if (habits.endsWith("\n")){
+      habits = habits.substring(0, habits.length - 2);
+    }
+    if (habits.startsWith("\n")){
+      habits = habits.substring(2, habits.length);
     }
 
     habitList.instance = this;
-    this.ListOfHabits = localStorage.getItem("habitlist").split('\n');
+    this.ListOfHabits = habits.split('\n');
     
   }
   static getInstance(){
@@ -16,7 +24,7 @@ class habitList {
     return habitList.instance;
   }
 }
-localStorage.setItem("habitlist", "Sleep\nExercise\nDiet\nCats");
+//localStorage.setItem("habitlist", "Sleep\nExercise\nDiet\nCats\n");
 if (localStorage.getItem("currenthabit") === null) {
       localStorage.setItem("currenthabit", habitList.getInstance().ListOfHabits[0]);
 }
