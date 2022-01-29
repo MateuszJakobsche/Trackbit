@@ -1,3 +1,56 @@
+//habitModify
+var btnOpenModifyWin = $(".js-openHabitModify");
+var btnCloseModifyWin = $(".js-closeHabitModify");
+var btnDeleteModifyWin = $(".js-deleteHabitModify");
+var btnSaveModifyWin = $(".js-saveHabitModify");
+
+var modifyWin = $(".js-habitModify");
+
+function closeModifyWin() {
+  modifyWin.removeClass("isVisible");
+  $("body").removeClass("overlay");
+}
+
+btnOpenModifyWin.on("click", function() {
+  modifyWin.addClass("isVisible");
+  $("body").addClass("overlay");
+});
+
+btnCloseModifyWin.on("click", function() {
+  closeModifyWin();
+});
+
+btnDeleteModifyWin.on("click", function() {
+  var inputName = $("input[name=name]").val();
+  
+  let habits = localStorage.getItem("habitlist");
+  let test = 0;
+  for (let i = 0; i < habitList.getInstance().ListOfHabits.length; i++ ){
+    if (habitList.getInstance().ListOfHabits[i] == inputName){
+      if(habits.startsWith(inputName)){
+        habits = habits.replace(inputName + "\n",'');
+      }
+      else{
+        habits = habits.replace("\n" + inputName,'');
+      }
+      localStorage.setItem("habitlist", habits);
+      location.reload();
+      test = 1;
+    }
+  }
+  if(test == 0){
+    alert(inputName + " habit doesn't exist\nperhaps there is a typo?");
+  }
+});
+
+btnSaveModifyWin.on("click", function() {
+  var inputName = $("input[name=name]").val();
+  
+  let habits = localStorage.getItem("habitlist") + "\n" + inputName;
+  localStorage.setItem("habitlist", habits);
+  location.reload();
+});
+
 //global variables
 var monthEl = $(".c-main");
 var dataCel = $(".c-cal__cel");
