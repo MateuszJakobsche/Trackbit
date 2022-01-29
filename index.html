@@ -148,7 +148,7 @@ function day_title(day_name) {
 <div class="wrapper">
   <div class="c-calendar">
     <div class="c-calendar__style c-aside">
-      <a class="c-add o-btn o-btn-upgr js-event__add" href="javascript:;">add new habit <span class="fa fa-plus"></span></a>
+      <a class="c-add o-btn o-btn-upgr js-openHabitModify" href="javascript:;">modify habits<span class="fa fa-plus"></span></a>
       <div class="habitList">
         <ul>
           <script src='habitList.js'></script>
@@ -179,13 +179,12 @@ function day_title(day_name) {
     </div>
     <!-- 喂 ponizsza czesc ma sie pokazac przy kliknieciu zeby stworzyc notatke -->
     <div class="c-calendar__style c-aside">
-      <a class="c-add o-btn js-event__add" href="javascript:;">add event <span class="fa fa-plus"></span></a>
-      <div class="c-aside__day">
+      <a class="c-add o-btn js-event__add" href="javascript:;">add note<span class="fa fa-plus"></span></a>
+      <!-- <div class="c-aside__day">
         <span class="c-aside__num"></span> <span class="c-aside__month"></span>
-      </div>
+      </div> -->
       <div class="c-aside__eventList">
         <script src = "couting_array_strategy.js">
-          
         </script>
         <ul>
           <li>
@@ -200,9 +199,17 @@ function day_title(day_name) {
             ">yearly</button>
           </li>
         </ul>
-
       </div>
     </div>
+  </div>
+
+  <div class="c-event__creator c-calendar__style js-habitModify">
+    <a href="javascript:;" class="o-btn js-closeHabitModify">CLOSE<span></span></a>
+    <a href="javascript:;" class="o-btn js-deleteHabitModify">DELETE <span class="fa fa-close"></span></a>
+    <a href="javascript:;" class="o-btn js-saveHabitModify">ADD <span class="fa fa-save"></span></a>
+    <form id="addEvent">
+      <input placeholder="Habit name" type="text" name="name">
+    </form>
   </div>
 
   <div class="c-event__creator c-calendar__style js-event__creator">
