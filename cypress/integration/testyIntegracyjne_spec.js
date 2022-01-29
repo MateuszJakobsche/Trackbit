@@ -25,4 +25,20 @@ describe('selecting', () => {
   
         cy.get(`[data-month="${date.getMonth()+1}"]`).should('be.visible')
       });
+      it('verifies alert and its text content', function(){
+      
+        cy.get('.c-cal__cel')
+        .first()
+        .next().next().next().next().next().next()
+        .click()
+  
+        const stub = cy.stub()  
+          cy.on ('window:alert', stub)
+          cy
+          .get('.reports').first().click()
+          .then(() => {
+            expect(stub.getCall(0)).to.be.calledWith("Days checked during this month: " + 1 + "\nIt equals to ~" + 4 + "% of the month!\n\nkeep going :>")      
+          });
+       
+        });
     })
