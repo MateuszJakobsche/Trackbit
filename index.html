@@ -187,6 +187,20 @@ function day_title(day_name) {
         <script src = "couting_array_strategy.js">
           
         </script>
+        <ul>
+          <li>
+            Reports
+          </li>
+          <li>
+            <button class="reports" onClick="countingStrategyManager.CountingStrategy = countByMonths; countingStrategyManager.count();
+            ">monthly</button>
+          </li>
+          <li>
+            <button class="reports" onClick="countingStrategyManager.CountingStrategy = countByYear; countingStrategyManager.count();
+            ">yearly</button>
+          </li>
+        </ul>
+
       </div>
     </div>
   </div>

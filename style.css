@@ -431,6 +431,11 @@ header > .wrapper a {
   display: block;
   padding-top: 100%;
 }
+.reports{
+  font-size: 18px;
+  margin-left: 20px;
+}
+
 
 /* zaznaczanie w kalendarzu */
 .c-cal__cel:nth-child(6) p {
